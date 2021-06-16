@@ -51,7 +51,7 @@ then
 link="http://localhost:$port"
 fi
 }
-link_err
+link_err > /dev/null 2>&1 &
 echo $'   \e[1;34m[\e[1;32m*\e[1;34m]\e[1;33m Website Url       \e[1;34m:\e[1;37m '$link
 cd $path
 php -S localhost:$port > /dev/null 2>&1 &
